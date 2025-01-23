@@ -23,6 +23,10 @@ namespace Lab1
             set {favouriteColour = value; }
 
             }
+
+        public string FullName { get { return firstName + " " + lastName; } }
+        public string FirstName { get { return firstName; } }
+        public int Age { get { return age; } }
         //constructor
         public Person(int personId, string firstName, string lastName,string favouriteColour, int age, bool isWorking)
         {
@@ -37,7 +41,7 @@ namespace Lab1
         // methods
         public string DisplayPersonInfo()
         {
-            return $"{personId}: {firstName} {lastName}'s favourite colour is {favouriteColour}";
+            return $"{personId}: {FullName}'s favourite colour is {favouriteColour}";
         }
 
         public string ChangeFavouriteColour()
@@ -48,12 +52,12 @@ namespace Lab1
         
         public int GetAgeInTenYears()
         {
-            return age + 10;
+            return Age + 10;
         }
 
         public override string ToString() 
         {
-            return $"PersonID: {personId} \nFirstName: {firstName} \nLastName: {lastName} \nFavouriteColour: {FavouriteColour} \nAge: {age} \nIsWorking{isWorking}";
+            return $"PersonID: {personId} \nFirstName: {firstName} \nLastName: {lastName} \nFavouriteColour: {FavouriteColour} \nAge: {age} \nIsWorking: {isWorking}";
         }
 
     } //class
